@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Decimal to Binary Converter</h1>
+        <table>
+            <tr>
+                <th>Enter Number </th>
+                <td><input id="num" type="number"></td>
+            </tr>
+        </table>
+        <button onclick="binary()">Convert</button>
+        <br>
+        <br>
+        <h3 id="ans"></h3>
+    </center>
+
+    <script>
+        var num,res,ans="";
+        function binary()
+        {
+            num=document.getElementById("num").value;
+            for(var i=num;i>0;i=parseInt(i/2))
+            {
+                res=(i%2);
+                ans=res+ans;
+            }
+            console.log(ans);
+        }
+    </script>
+</body>
+</html>

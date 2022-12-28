@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Middle Element</h1>
+        <table>
+            <th>Enter Number</th>
+            <td><input id="num" type="text"></td>
+        </table>
+        <br>
+        <button onclick="add()">Add</button>
+        <br><br><br>
+        <button onclick="check()">Check</button>
+        <h3 id="data"></h3>
+    </center>
+    <script>
+        var arr=new Array(),num;
+        function add()
+        {
+            num=document.getElementById("num").value;
+            arr.push(num);
+            document.getElementById("num").value="";
+        }
+        function check()
+        {
+            var n=parseInt(arr.length/2);
+            if(arr.length%2==0)
+            {
+                document.getElementById("data").innerHTML=("Array indexes are even<br>So Middle indexex are "+arr[n-1]+" & "+arr[n]+"<br>");
+                
+            }
+            else
+            {
+                document.getElementById("data").innerHTML=("Array indexes are odd<br>So Middle index is "+arr[n]+"<br>");
+                
+            }
+        }
+        // var arr=new Array(1,2,3,4,5,6,7,8);
+        // var n=parseInt(arr.length/2);
+        // if(arr.length%2==0)
+        // {
+        //     document.write("Array indexes are even<br>");
+        //     document.write("So Middle indexex are "+arr[n-1]+" & "+arr[n]+"<br>");
+        // }
+        // else
+        // {
+        //     document.write("Array indexes are odd<br>");
+        //     document.write("So Middle index is "+arr[n]+"<br>");
+        // }
+    </script>
+</body>
+</html>

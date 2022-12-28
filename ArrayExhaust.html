@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <center>
+    <div class="container">
+        <table class="table table-borderless">
+            <tr>
+                <th>Enter Integer or String</th>
+                <td><form id="form2"><input type="text" id="t2"></form></td>
+            </tr>
+        </table>
+        <button class="btn btn-primary p-3" onclick="input()">Add</button>
+        <br><br><br>
+        <h5 id="num"></h5>
+        <h5 id="str"></h5>
+
+    </div>
+    </center>
+
+    <script>
+        var c1=0;c2=0;
+        var no=new Array(10);
+        var str=new Array(10);
+        function input()
+        {
+            var data=document.getElementById("t2").value;
+            if(Number.isInteger(parseInt(data)))
+            {
+                no[c1]=sum(data);
+                c1++;
+                if(c1==10)
+                {
+                    document.getElementById("num").innerHTML="Integer Array is Exhausted.. Data :";
+                    for(var i=0;i<no.length;i++)
+                    {
+                        document.getElementById("num").innerHTML +="  "+no[i];
+                    }
+                    
+                }
+            }
+            else
+            {
+                str[c2]=concat(data);
+                c2++;
+                if(c2==10)
+                {
+                    document.getElementById("str").innerHTML="String Array is Exhausted.. Data :";
+                    for(var i=0;i<str.length;i++)
+                    {
+                        document.getElementById("str").innerHTML +="  "+str[i];
+                    }
+                    
+                }
+                
+            }
+            form2.reset();
+        }
+        function concat(s)
+        {
+            if(c2==0)
+                return s
+            else
+                return (str[c2-1]+s);
+        }
+        function sum(n)
+        {
+            if(c1==0)
+                return n;
+            else
+                return (+no[c1-1]+ +n)
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
